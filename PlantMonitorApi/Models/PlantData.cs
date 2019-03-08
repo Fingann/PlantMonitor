@@ -2,7 +2,7 @@ namespace PlantMonitorApi.Models
 {
     public class PlantData
     {
-        public string PlantId { get; set; }
-        public double Value { get; set; }
+        public string plantId { get; set; }
+        public double moisture { get; set; }
     }
 }

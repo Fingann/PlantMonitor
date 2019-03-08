@@ -23,22 +23,22 @@ namespace PlantMonitorApi.Controllers
         [HttpGet]
         public async Task<PlantData> Get()
         {
-            return new PlantData(){PlantId = "Jostein", Value = 50.5};
+            return new PlantData(){plantId = "Jostein", moisture = 50.5};
         }
         
 
         [HttpPost]
-        public async Task Post([FromBody] PlantData value)
+        public async Task Post([FromBody] PlantData Value)
         {
             var cpuTime = new LineProtocolPoint(
-                value.PlantId,
+                Value.plantId,
                 new Dictionary<string, object>
                 {
-                    { "Value", value.Value },
+                    { "Moisture", Value.moisture },
                 },
                 new Dictionary<string, string>
                 {
-                    { "Name", value.PlantId }
+                    { "ID", Value.plantId }
                 },
                 DateTime.UtcNow);
 
